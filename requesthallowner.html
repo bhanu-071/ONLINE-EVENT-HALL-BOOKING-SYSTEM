@@ -1,0 +1,97 @@
+<html>
+<head>
+<style>
+label{font-size:25px;}
+p{font-size:20px;
+  margin-left:400px;}
+div {
+   height:248%;
+  background-color: #d2b4ac;
+  margin:0;
+  animation-name: example;
+  animation-duration: 13s;
+  animation-iteration-count:infinite;
+}
+@keyframes example {
+  0%   {background-color:#a0d6b4;}
+  15%  {background-color: #ff9b94;}
+  30%  {background-color: #bc8f8f;}
+  45% {background-color: #fffcab;}
+  60% {background-color: #D3D3D3;}
+  75% {background-color: pink;}
+  90% {background-color: #fcdee9;}
+}
+</style>
+<body>
+<?
+session_start(); 
+if($_SESSION['login']){?>
+<div>
+<a href='http://localhost:8080/logout.php'><button style='border-radius:25px; float:right; margin:15px;'><b style='margin:15px; text-align:center; font-size:25px;'>logout</b></button></a></br></br></br>
+<h1><center>Add Hall Request</center></h1>
+<form action="reqhall.php" method="post"><center>
+<label>Hall Name:</label>
+<input type='text' name='hallname' id='hallname' required placeholder='Required'></br>
+</br><label>Capacity:</label>
+<input type='number' name='capacity' id='capacity' required placeholder='Required'></br>
+</br><label>Registered emailid:</label>
+<input type='email' name='email' id='email' required placeholder='Required'></br>
+</br><label>Registered mobile_no:</label>
+<input type='number' name="mobile" id="mobile" required placeholder='Required'/></br>
+</br><label>Amount:</label>
+<input type="number" name="amount" id="amount" required placeholder='Required'></br>
+</br><p><b>Note:</b>Amount you entered here is paid by organiser i.e who want to book your hall and later it can be modified.</p> 
+</br><label for='address'>Address:</label></br>
+<textarea rows='8' cols='65' id='address' name='address' required placeholder='Required'>
+</textarea></br></br>
+<a href='#'><button
+style='background-color:LightBlue; float:right; margin-right:540px;border-radius:25px;'><h2><b>Request</b></h2></button></a>
+</br></br>
+</center></form>
+</br></br>
+<h1><center>Set Availability</center></h1>
+<form action="ownersetavailability.php" method="post"><center>
+<label>Hall Name:</label>
+<input type='text' name='hallname' id='hallname' required placeholder='Required'></br>
+</br><label>Email:</label>
+<input type='email' name='email' id='email' required placeholder='Required'></br>
+</br><label>Start Date:</label>
+<input type='date' name='fromdate' id='fromdate' min="<?= date('d-m-y');?>" required placeholder='Required'></br>
+</br><label>End Date:</label>
+<input type='date' name='todate' id='todate' min="<?= date('d-m-y');?>" required placeholder='Required'></br>
+</br><label>Set Availability:</label>
+<select name='avail' id='avail'>
+  <option>select</option>
+  <option value='Available'>available</option>
+  <option value='Not Available'>not available</option>
+</select></br></br>
+</br><label for='address'>Address:</label></br>
+<textarea rows='8' cols='65' id='address' name='address' required placeholder='Required'>
+</textarea></br></br>
+<a href='#'><button
+style='background-color:LightBlue; float:right; margin-right:540px;border-radius:25px;'><h2><b>set availability</b></h2></button></a>
+</br></br>
+</center></form>
+</br></br>
+<h1><center>Set Amount</center></h1>
+<form action="ownersetamount.php" method="post"><center>
+<label>Hall Name:</label>
+<input type='text' name='hallname' id='hallname' required placeholder='Required'></br>
+</br><label>Email:</label>
+<input type='email' name='email' id='email' required placeholder='Required'></br>
+</br><label>Amount:</label>
+<input type="number" name="amount" id="amount" required placeholder='Required'></br>
+</br><label for='address'>Address:</label></br>
+<textarea rows='8' cols='65' id='address' name='address' required placeholder='Required'>
+</textarea></br></br>
+<a href='#'><button
+style='background-color:LightBlue; float:right; margin-right:540px;border-radius:25px;'><h2><b>set amount</b></h2></button></a>
+</br></br>
+</center></form>
+</br></br>
+</div>
+<? }
+else{
+echo "session has ended";}?>
+</body>
+</html>

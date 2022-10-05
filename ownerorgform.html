@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>organiserregform</title>  
+<link rel="stylesheet" href="http://localhost:8080/formstyle.css">
+<style>
+.bg-img {
+  /* The image used */
+  background-image: url("http://localhost:8080/Event-Venue.png");
+  /* Center and scale the image nicely */
+  background-attachment:absolute;
+  margin:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:170%;
+  width:100%;
+}
+</style>
+</head>
+<body>
+<div class="bg-img">    
+<form class="container" action="insertedowner.php" method="post" enctype="multipart/form-data">  
+  <h1> REGISTER FORM FOR OWNER </h1>
+<label for="firstname"> Firstname </label>        
+<input type="text" name="firstname" required placeholder="Required"/>
+<label for="middlename"> Middlename: </label>    
+<input type="text" name="middlename"/>   
+<label for="lastname"> Lastname: </label>        
+<input type="text" name="lastname"/>   
+<label for="phonenum">  
+Phone :  
+</label>  
+<input type="text" id="phonenum" name="phonenum" required placeholder="Required" />
+<label for="email">Email:</label>  
+<input type="email" id="email" name="email" required placeholder="Required"/>
+<label for="password">Password:</label>  
+<input type="Password" id="password" name="password" required placeholder="Required"/>  
+<label for="confirmpassword">Re-type password:</label> 
+<input type="Password" id="confirmpassword" name="confirmpassword" required placeholder="Required"/>
+<label for="image">Upload Your Signature:</label>
+<input type="file" id="image" name="image" accept="image/*" required/></br></br> 
+<label for="address">Address:</label></br>
+<textarea rows="8" cols="65" id="address" name="address" required placeholder="Required">
+</textarea>
+<label for="food">what is your favourite food?</label>
+<input   type="text" id="food" name="food" required placeholder="Required and remember it."/>
+</br></br>
+<button type="reset" class="btn" style="float:left; width:40%; font-size:25px;">clear</button>  
+<button type="submit" class="btn" style="float:right; width:40%; font-size:25px;">submit</button> 
+</form>
+</div>  
+</body>  
+</html> 

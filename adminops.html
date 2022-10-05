@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>admin operations
+</title>
+<style>
+p{margin-left:200px;
+  margin-right:150px;}
+</style>
+</head>
+<body>
+<p>click the add hall button to add hall and click the block button to block an user
+,click the unblock button to unblock an blocked user</p>
+<?php
+$host = "localhost";  
+$user = "root";  
+$pass = "";
+$db="eventhall";  
+$conn = mysqli_connect($host,$user,$pass,$db);  
+if($conn )  
+{ echo "connect succuss";}
+else{
+   die('Could not connect: ' . mysqli_connect_error());  
+}  
+$sql = 'select * from blockusers';
+$result=mysqli_query($conn,$sql);?>
+<table border="1" cellspacing="0" cellpadding="10">
+ <tr>
+    <th>S.NO</th>
+    <th>Name</th>
+    <th>Emailid</th>
+    <th>Mobile No</th>
+    <th>usertype</th>
+    <th>Address</th>
+  </tr>
+<?php
+if (mysqli_num_rows($result) > 0) {
+  $sn=1;
+  while($data = mysqli_fetch_assoc($result)) {?>
+<tr>
+   <td><?php echo $sn; ?> </td>
+   <td><?php echo $data['name']; ?> </td>
+   <td><?php echo $data['Emailid']; ?> </td>
+   <td><?php echo $data['phonenum']; ?> </td>
+   <td><?php echo $data['usertype']; ?> </td>
+   <td><?php echo $data['address']; ?> </td> 
+ </tr>
+  <?php $sn++;}} else { ?>
+  <tr>
+     <td colspan="6">No data found</td>
+    </tr>
+</table>
+<?php }mysqli_close($conn);?>
+<a href='#'><button
+style='background-color:LightBlue; float:right; margin-right:260px;border-radius:25px;'><h2><b>add hall</b></h2></button></a>
+<a href='#'><button
+style='background-color:LightBlue; float:left; margin-left:260px;border-radius:25px;'><h2><b>block</b></h2></button></a>
+<a href='#'><button
+style='background-color:LightBlue; float:right; margin-right:560px;border-radius:25px;'><h2><b>unblock</b></h2></button></a>
+</body>
+</html>              

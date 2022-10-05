@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>HALL BOOKING</title>
+<style>
+body{background-image: url('http://localhost:8080/function.jpg');
+  background-attachment:absolute;
+  margin:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+  width:100%;}
+</style>
+</head>
+<body>
+<form>
+<center>
+    <h1 align="center">HALL BOOKING</h1>
+    <div>EMAIL:<input type="text" name="name"></div> <br>
+    <div>AVAILABLE HALLS:<select>
+ 	<option value="abc">ABC</option>
+	<option value="def">DEF</option>
+	<option value="ghi">GHI</option>
+	<option value="jkl">JKL</option>
+	<option value="mno">MNO</option>
+	<option value="pqr">PQR</option>
+     </select>
+</div>
+<br>
+<div>AMOUNT TO BE PAID:<input type="text" name="name" placeholder="in rupees"></div> <br>
+<div>HALL ADDRESS:<br>
+<textarea rows="9" cols="70"> 
+</textarea>
+</div>
+<br>
+<div>DATE:<input type="date" name="date"></div> <br>
+<div>EVENT TYPE:<br>
+       PROFESSIONAL:<input type="radio" name="pro">
+       NON-PROFESSIONAL:<input type="radio" name="npro">
+</div>
+<br>
+<div>EVENT PURPOSE:<select>
+ 	<option value="m">Marriage</option>
+	<option value="b">Birthday</option>
+	<option value="sem">Seminar</option>
+	<option value="oth">Others</option>
+     </select>
+</div>
+<br>
+<div>EVENT NAME:<input type="text" name="name"></div> <br>
+<input type="submit" value="submit">
+</center>
+</form>
+</body>
+</html>

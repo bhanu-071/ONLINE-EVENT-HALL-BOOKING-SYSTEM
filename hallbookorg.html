@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>booking</title>
+<style>
+div {
+   height:100%;
+  background-color: #d2b4ac ;
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes example {
+  0%   {background-color:#a0d6b4;}
+  15%  {background-color: #ff9b94;}
+  30%  {background-color: #bc8f8f;}
+  45% {background-color: #fffcab;}
+  60% {background-color: #D3D3D3;}
+  75% {background-color: pink;}
+  90% {background-color: #fcdee9;}
+}
+p{margin-left:200px;
+  margin-right:150px;
+font-size:20px;}
+label{font-size:23px;}
+
+</style>
+</head>
+
+<body>
+<div>
+<center>
+<form action="hallbookorg.php" method="post">
+<h1>HALL BOOKING</h1>
+<label>Emailid:</label>
+<input type="text" name="email" id="email" required placeholder='enter registered emailid'></br></br>
+</br><label>From Date:</label>
+<input type="date" name="fromdate" id="fromdate" required placeholder='enter start date'></br></br>
+</br><label>Start Time:</label>
+<input type="time" name="starttime" id="starttime" required placeholder='enter start time'></br></br>
+</br><label>To Date:</label>
+<input type="date" name="todate" id='todate' required placeholder='enter end date'></br></br>
+</br><label>End Time:</label>
+<input type="time" name="endtime" id="endtime" required placeholder='enter end time'></br></br>
+</br><label>Event type:</label>
+<select name="eventtype" id="eventtype">
+  <option value=''>SELECT</option>
+<option value='Professional'>PROFESSIONAL</option>
+  <option value='Non Professional'>NON PROFESSIONAL</option>
+</select>
+<p><b>Note:</b>click on continue button to move further</p>
+<a href='#'><button
+style='background-color:LightBlue; float:right; margin-right:540px;border-radius:25px;'><h2><b>continue</b></h2></button></a>
+</form></center>
+</div></body>
+</html>
